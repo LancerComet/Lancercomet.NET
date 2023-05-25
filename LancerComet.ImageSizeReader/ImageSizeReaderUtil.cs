@@ -161,21 +161,30 @@ public class ImageSizeReaderUtil {
   private static Size WebPCalculateExtended (byte[] buffer, BinaryReader binaryReader) {
     using var ms = new MemoryStream(buffer);
     using var reader = new BinaryReader(ms);
-    var width = 1 + (int)ReadUInt24(binaryReader); // You need to write a method to read 3 bytes as UInt24
-    var height = 1 + (int)reader.ReadUInt32() >> 8;
+
+    reader.BaseStream.Seek(4, SeekOrigin.Begin);
+    var width = reader.ReadByte() | (reader.ReadUInt16() << 8);
+    width += 1;
+
+    reader.BaseStream.Seek(7, SeekOrigin.Begin);
+    var height = reader.ReadByte() | (reader.ReadUInt16() << 8);
+    height += 1;
+
     return new Size(width, height);
   }
 
   private static Size WebPCalculateLossless (byte[] buffer) {
-    var width = 1 + ((buffer[2] & 0x3F) << 8) | buffer[1];
-    var height = 1 + ((buffer[4] & 0xF) << 10) | (buffer[3] << 2) | ((buffer[2] & 0xC0) >> 6);
+    var width = 1 + (((buffer[2] & 0x3F) << 8) | buffer[1]);
+    var height = 1 + (((buffer[4] & 0xF) << 10) | (buffer[3] << 2) | ((buffer[2] & 0xC0) >> 6));
     return new Size(width, height);
   }
 
   private static Size WebPCalculateLossy (byte[] buffer) {
     using var ms = new MemoryStream(buffer);
     using var reader = new BinaryReader(ms);
+    ms.Position = 6;
     var width = reader.ReadInt16() & 0x3fff;
+    ms.Position = 8;
     var height = reader.ReadInt16() & 0x3fff;
     return new Size(width, height);
   }

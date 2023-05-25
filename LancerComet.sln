@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LancerComet.ImageSizeReader", "LancerComet.ImageSizeReader\LancerComet.ImageSizeReader.csproj", "{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LancerComet.ImageSizeReader.Test", "LancerComet.ImageSizeReader.Test\LancerComet.ImageSizeReader.Test.csproj", "{C0DA0F5F-4401-4A46-8CD5-610B47ACCBF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0DA0F5F-4401-4A46-8CD5-610B47ACCBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0DA0F5F-4401-4A46-8CD5-610B47ACCBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0DA0F5F-4401-4A46-8CD5-610B47ACCBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0DA0F5F-4401-4A46-8CD5-610B47ACCBF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
