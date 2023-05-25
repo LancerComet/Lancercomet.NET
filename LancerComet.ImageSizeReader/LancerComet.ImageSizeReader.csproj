@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>LancerComet.ImageSizeReader</Title>
+    <Authors>LancerComet</Authors>
+    <Version>1.0.0</Version>
+    <AssemblyName>LancerComet.ImageSizeReader</AssemblyName>
+    <RootNamespace>LancerComet.ImageSizeReader</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Description>
+      Getting image dimensions without reading an entire file.
+      This package is ported from https://github.com/doxakis/ImageSizeReader.
+
+      - No GDI+ involved here, only pure c#
+      - Optimized for memory consuption and being cloud friendly
+      - Early stop when it cannot determine the dimensions
+
+      New features comparing to the original:
+      - Functions are turned to static function.
+      - Add webp detection.
+      - Add bmp detection.
+    </Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/LancerComet/Lancercomet.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/LancerComet/Lancercomet.NET</RepositoryUrl>
+    <Copyright>© 2023 LancerComet</Copyright>
+    <PackageId>LancerComet.ImageSizeReader</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LancerComet.ImageSizeReader", "LancerComet.ImageSizeReader\LancerComet.ImageSizeReader.csproj", "{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEFEDCAA-6937-459E-8AD1-ECBEF09165B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F15B952-B659-43F9-A332-6ED7D85ABED8}
+	EndGlobalSection
+EndGlobal
