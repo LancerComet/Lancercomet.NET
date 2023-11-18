@@ -11,18 +11,25 @@ public class ImageSizeReaderUtil {
   /// Get dimension of the image.
   /// </summary>
   /// <param name="fileStream"></param>
+  /// <param name="keepOpen"></param>
   /// <returns></returns>
   /// <exception cref="InvalidWidthOrHeightException"></exception>
   /// <exception cref="CoundNotDetermineDimensionsException"></exception>
-  public static Size GetDimensions (Stream fileStream) {
-    using var binaryReader = new BinaryReader(fileStream);
+  public static Size GetDimensions (Stream fileStream, bool keepOpen = false) {
+    var binaryReader = new BinaryReader(fileStream);
     try {
       var dimensions = GetDimensions(binaryReader);
       if (dimensions.Width == 0 || dimensions.Height == 0) {
         throw new InvalidWidthOrHeightException();
       }
+      if (!keepOpen) {
+        binaryReader.Dispose();
+      }
       return dimensions;
     } catch (EndOfStreamException) {
+      if (!keepOpen) {
+        binaryReader.Dispose();
+      }
       throw new CoundNotDetermineDimensionsException(4);
     }
   }

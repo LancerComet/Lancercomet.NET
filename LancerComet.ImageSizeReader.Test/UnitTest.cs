@@ -1,5 +1,5 @@
+using System;
 using System.IO;
-using LancerComet.ImageSizeReader.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LancerComet.ImageSizeReader.Test {
@@ -52,6 +52,25 @@ namespace LancerComet.ImageSizeReader.Test {
       var webp = ImageSizeReaderUtil.GetDimensions(File.OpenRead("test.vp8x.webp"));
       Assert.AreEqual(1799, webp.Width);
       Assert.AreEqual(885, webp.Height);
+    }
+
+    [TestMethod]
+    public void KeepOpenFalse () {
+      try {
+        using var fs = File.OpenRead("test.jpg");
+        ImageSizeReaderUtil.GetDimensions(fs);
+        fs.Seek(0, SeekOrigin.Begin);
+      } catch (ObjectDisposedException) {
+        return;
+      }
+      throw new Exception("Should not go there");
+    }
+    
+    [TestMethod]
+    public void KeepOpenTrue () {
+      using var fs = File.OpenRead("test.jpg");
+      ImageSizeReaderUtil.GetDimensions(fs, true);
+      fs.Seek(0, SeekOrigin.Begin);
     }
   }
 }
