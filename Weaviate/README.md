@@ -47,7 +47,7 @@ var clientWithTimeout = new WeaviateClient("http://localhost:8080", null, timeou
 ### Health Check
 
 ```csharp
-bool isHealthy = await client.CheckHealthAsync();
+var isHealthy = await client.CheckHealthAsync();
 if (isHealthy) {
   Console.WriteLine("Weaviate is running!");
 }
@@ -85,7 +85,7 @@ var articleClass = new WeaviateClass {
 };
 
 // Create the schema
-bool created = await client.CreateSchemaAsync(articleClass);
+await client.CreateSchemaAsync(articleClass);
 
 // Get existing schema
 var schema = await client.GetSchemaAsync();
@@ -132,7 +132,7 @@ if (retrievedObject != null) {
 #### Delete Object
 
 ```csharp
-bool deleted = await client.DeleteObjectAsync(objectId);
+await client.DeleteObjectAsync(objectId);
 ```
 
 ### Vector Similarity Search
