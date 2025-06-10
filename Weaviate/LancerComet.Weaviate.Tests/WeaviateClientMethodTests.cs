@@ -1,4 +1,14 @@
+using System.Text.Json.Serialization;
+
 namespace LancerComet.Weaviate.Tests;
+
+public class Article {
+  [JsonPropertyName("title")]
+  public string Title { get; set; } = "";
+
+  [JsonPropertyName("content")]
+  public string Content { get; set; } = "";
+}
 
 public class WeaviateClientMethodTests : IDisposable {
   private readonly WeaviateClient _client;
@@ -45,7 +55,7 @@ public class WeaviateClientMethodTests : IDisposable {
     // Act & Assert
     // Since there's no server running and try-catch was removed, this should throw an exception
     await Assert.ThrowsAsync<HttpRequestException>(
-      () => this._client.VectorSearchAsync("Article", queryVector, 5)
+      () => this._client.VectorSearchAsync<Article>("Article", queryVector, 5)
     );
   }
 
@@ -57,11 +67,11 @@ public class WeaviateClientMethodTests : IDisposable {
     // Act & Assert
     // Invalid distance parameters should throw ArgumentException
     await Assert.ThrowsAsync<ArgumentException>(
-      () => this._client.VectorSearchAsync("Article", queryVector, 10, -1f)
+      () => this._client.VectorSearchAsync<Article>("Article", queryVector, 10, -1f)
     );
 
     await Assert.ThrowsAsync<ArgumentException>(
-      () => this._client.VectorSearchAsync("Article", queryVector, 10, 3f)
+      () => this._client.VectorSearchAsync<Article>("Article", queryVector, 10, 3f)
     );
   }
 

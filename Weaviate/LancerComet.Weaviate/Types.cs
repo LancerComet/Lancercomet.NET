@@ -46,17 +46,6 @@ public class WeaviateBatchResultDetail {
   public string Status { get; set; } = "";
 }
 
-public class WeaviateSearchResult {
-  [JsonPropertyName("_additional")]
-  public Dictionary<string, object> Additional { get; set; } = new();
-
-  public string? Id => this.Additional.GetValueOrDefault("id")?.ToString();
-
-  public float Distance => float.TryParse(this.Additional.GetValueOrDefault("distance")?.ToString(), out var d) ? d : 1.0f;
-
-  public float Similarity => 1.0f - this.Distance;
-}
-
 public class WeaviateGraphQlData {
   [JsonPropertyName("Get")]
   public JsonElement Get { get; set; } = new();

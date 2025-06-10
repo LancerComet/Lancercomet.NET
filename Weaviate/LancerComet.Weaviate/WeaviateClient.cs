@@ -79,7 +79,7 @@ public class WeaviateClient : IDisposable {
     return ids;
   }
 
-  public async Task<List<WeaviateSearchResult>?> VectorSearchAsync (
+  public async Task<List<T>?> VectorSearchAsync<T> (
     string className,
     float[] queryVector,
     int limit = 10,
@@ -116,9 +116,9 @@ public class WeaviateClient : IDisposable {
     var result = await response.Content.ReadAsStringAsync();
     var graphqlResponse = JsonSerializer.Deserialize<WeaviateGraphQlResponse>(result, this._jsonOptions);
 
-    if (graphqlResponse?.Data?.Get != null) {
+    if (graphqlResponse?.Data.Get != null) {
       var classData = graphqlResponse.Data.Get.GetProperty(className);
-      var results = JsonSerializer.Deserialize<List<WeaviateSearchResult>>(classData.GetRawText(), this._jsonOptions);
+      var results = JsonSerializer.Deserialize<List<T>>(classData.GetRawText(), this._jsonOptions);
       return results;
     }
 
