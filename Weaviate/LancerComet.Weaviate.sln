@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LancerComet.Weaviate", "LancerComet.Weaviate\LancerComet.Weaviate.csproj", "{1E8FC927-5429-4709-B5AF-2AAB23A9992F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LancerComet.Weaviate.Tests", "LancerComet.Weaviate.Tests\LancerComet.Weaviate.Tests.csproj", "{2E8FC927-5429-4709-B5AF-2AAB23A9992G}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E8FC927-5429-4709-B5AF-2AAB23A9992F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8FC927-5429-4709-B5AF-2AAB23A9992F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8FC927-5429-4709-B5AF-2AAB23A9992F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8FC927-5429-4709-B5AF-2AAB23A9992F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E8FC927-5429-4709-B5AF-2AAB23A9992G}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8FC927-5429-4709-B5AF-2AAB23A9992G}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8FC927-5429-4709-B5AF-2AAB23A9992G}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8FC927-5429-4709-B5AF-2AAB23A9992G}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

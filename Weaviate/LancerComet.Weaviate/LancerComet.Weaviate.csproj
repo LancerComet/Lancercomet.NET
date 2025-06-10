@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Version>0.1.0</Version>
+        <Title>LancerComet.Weaviate</Title>
+        <Authors>LancerComet</Authors>
+        <Description>A Weaviate client for .NET.</Description>
+        <Copyright>© 2025 LancerComet</Copyright>
+        <AssemblyVersion>0.1.0</AssemblyVersion>
+        <FileVersion>0.1.0</FileVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/LancerComet/Lancercomet.NET</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/LancerComet/Lancercomet.NET</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <TargetFramework>net9.0</TargetFramework>
+    </PropertyGroup>
+
+</Project>
