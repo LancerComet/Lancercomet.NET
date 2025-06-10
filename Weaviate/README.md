@@ -138,9 +138,22 @@ await client.DeleteObjectAsync(objectId);
 ### Vector Similarity Search
 
 ```csharp
+class ArticleClass {
+  [JsonPropertyName("title")] 
+  public string Title { get; set; }
+  
+  [JsonPropertyName("content")]
+  public string Content { get; set; }
+  
+  [JsonPropertyName("_additional")]
+  public Dictionary<string, object> Additional { get; set; } = new();
+  
+  public float Distance => float.TryParse(this.Additional.GetValueOrDefault("distance")?.ToString(), out var d) ? d : 1.0f;
+}
+
 var queryVector = new[] { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f };
 
-var searchResults = await client.VectorSearchAsync(
+var searchResults = await client.VectorSearchAsync<ArticleClass>(
     className: "Article",
     queryVector: queryVector,
     limit: 10,
