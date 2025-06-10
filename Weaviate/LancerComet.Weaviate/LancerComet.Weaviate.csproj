@@ -3,13 +3,13 @@
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Version>0.1.1</Version>
+        <Version>0.1.2</Version>
         <Title>LancerComet.Weaviate</Title>
         <Authors>LancerComet</Authors>
         <Description>A Weaviate client for .NET.</Description>
         <Copyright>© 2025 LancerComet</Copyright>
-        <AssemblyVersion>0.1.1</AssemblyVersion>
-        <FileVersion>0.1.1</FileVersion>
+        <AssemblyVersion>0.1.2</AssemblyVersion>
+        <FileVersion>0.1.2</FileVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/LancerComet/Lancercomet.NET</PackageProjectUrl>
         <RepositoryUrl>https://github.com/LancerComet/Lancercomet.NET</RepositoryUrl>
