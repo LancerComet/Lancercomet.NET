@@ -50,12 +50,6 @@ public class WeaviateSearchResult {
   [JsonPropertyName("_additional")]
   public Dictionary<string, object> Additional { get; set; } = new();
 
-  [JsonPropertyName("addedAt")]
-  public DateTimeOffset AddedAt { get; set; }
-
-  [JsonPropertyName("fileName")]
-  public string Filename { get; set; } = "";
-
   public string? Id => this.Additional.GetValueOrDefault("id")?.ToString();
 
   public float Distance => float.TryParse(this.Additional.GetValueOrDefault("distance")?.ToString(), out var d) ? d : 1.0f;
